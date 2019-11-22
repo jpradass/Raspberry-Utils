@@ -1,0 +1,14 @@
+[Unit]
+Description=Cpu Temperature Control Fan service to start on raspberry pi boot
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u cpufan_watcher.py
+WorkingDirectory=/home/pi/Documents/Raspberry-Utils/Cpu-FanWatcher
+StandardOutput=cpufan.log
+StandardError=cpufan.log
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

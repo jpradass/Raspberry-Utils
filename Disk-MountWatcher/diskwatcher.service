@@ -1,0 +1,14 @@
+[Unit]
+Description=Disk watcher to mount unmounted disks
+After=network.target
+
+[Service]
+ExecStart=./disk_watcher.sh
+WorkingDirectory=/home/pi/Documents/Raspberry-Utils/Disk-MountWatcher
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
