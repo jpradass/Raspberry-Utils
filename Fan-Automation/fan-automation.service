@@ -1,0 +1,15 @@
+[Unit]
+Description=Fan program to control over temperature
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u fan_automation.py
+WorkingDirectory=/home/pi/Documents/Raspberry-Utils/Fan-Automation
+StandardOutput=stdout.log
+StandardError=stderr.log
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
