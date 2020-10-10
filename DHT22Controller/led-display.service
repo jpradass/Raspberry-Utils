@@ -1,0 +1,14 @@
+[Unit]
+Description=Led display controller
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python -m DHT22Controller.led_controller
+WorkingDirectory=/home/pi/Documents
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

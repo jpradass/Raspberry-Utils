@@ -1,0 +1,14 @@
+[Unit]
+Description=Service to monitor DHT22 sensor
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 dht22_monitor.py
+WorkingDirectory=/home/pi/Documents/Monitoring
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target 
